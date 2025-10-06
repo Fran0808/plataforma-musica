@@ -1,1 +1,24 @@
-<p>search works!</p>
+<div class="container">
+  <h2>Buscar canciones en Deezer</h2>
+  <input [(ngModel)]="query" type="text" placeholder="Buscar..." class="form-control" style="max-width:300px;display:inline-block;">
+  <button (click)="buscar()" class="btn btn-primary">Buscar</button>
+  @if (loading) {
+    <div>Cargando...</div>
+  }
+  @if (error) {
+    <div>{{error}}</div>
+  }
+  <div id="results">
+    @for (track of results; track track.id) {
+      <div class="song">
+        <img [src]="track.album.cover" alt="Portada" style="height:80px;vertical-align:middle;margin-right:12px;">
+        <strong>{{ track.title }}</strong> - {{ track.artist.name }}
+        <audio controls [src]="track.preview"></audio>
+      </div>
+    }
+    @empty {
+      <div>No se encontraron resultados.</div>
+    }
+  </div>
+</div>
+
