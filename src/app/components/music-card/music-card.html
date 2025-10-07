@@ -1,5 +1,20 @@
-<div class="music-card">
-  <img [src]="image" [alt]="title" width="150" height="150" />
-  <h4>{{ title }}</h4>
-  <p>{{ genres }}</p>
+@if (loading) {
+  <div>Cargando...</div>
+}
+
+@if (error) {
+  <div>{{ error }}</div>
+}
+
+<div id="results">
+  @for (track of results; track track.id) {
+    <div class="song">
+      <img [src]="track.album.cover" alt="Portada" style="height:80px;vertical-align:middle;margin-right:12px;">
+      <strong>{{ track.title }}</strong> - {{ track.artist.name }}
+      <audio controls [src]="track.preview"></audio>
+    </div>
+  }
+  @empty {
+    <div>No se encontraron resultados.</div>
+  }
 </div>
