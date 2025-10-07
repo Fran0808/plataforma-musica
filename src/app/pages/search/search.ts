@@ -18,8 +18,8 @@ export class Search {
   //Variables declaradas para el componente de busqueda
   
   query = '';
-  results: any[] = [];
-  loading = false;
+  resultados: any[] = [];
+  cargando = false;
   error = '';
 
   constructor(private music: Music) {}
@@ -32,22 +32,22 @@ export class Search {
       this.error = 'Escribe algo';
       return;
     }
-    this.loading = true;
+    this.cargando = true;
     this.error = '';
-    this.results = [];
+    this.resultados = [];
     this.buscado = true;
 
-    this.music.searchTracks(this.query).subscribe({
+    this.music.buscarPistas(this.query).subscribe({
       next: (data: any) => {
-        this.loading = false;
+        this.cargando = false;
         if (!data.data.length) {
           this.error = 'No se encontraron resultados';
           return;
         }
-        this.results = data.data;
+        this.resultados = data.data;
       },
       error: (err) => {
-        this.loading = false;
+        this.cargando = false;
         this.error = 'Error: ' + err.message;
       }
     });

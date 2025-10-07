@@ -1,4 +1,4 @@
-@if (loading) {
+@if (cargando) {
   <div class="alert alert-info text-center my-3">Cargando...</div>
 }
 
@@ -7,7 +7,7 @@
 }
 
 <div id="results" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
-  @for (track of results; track track.id) {
+  @for (track of resultados; track track.id) {
     <div class="col">
       <div class="card h-100 shadow-sm p-2">
         <img [src]="track.album.cover" class="card-img-top img-fluid" alt="Portada del álbum">

@@ -10,8 +10,9 @@ import { Observable } from 'rxjs';
 export class Music {
   constructor(private http: HttpClient) {}
 
-  searchTracks(query: string): Observable<any> {
+  buscarPistas(query: string): Observable<any> {
     const url = `https://api.deezer.com/search?q=${encodeURIComponent(query)}&output=jsonp`;
     return this.http.jsonp(url, 'callback');
   }
+
 }
