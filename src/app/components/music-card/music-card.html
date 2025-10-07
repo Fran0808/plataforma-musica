@@ -1,5 +1,11 @@
-<div class="music-card">
-  <img [src]="image" [alt]="title" width="150" height="150" />
-  <h4>{{ title }}</h4>
-  <p>{{ genres }}</p>
+<div class="music-card position-relative text-center p-3">
+  <div class="image-container position-relative">
+    <img [src]="image" [alt]="title" class="img-fluid rounded shadow-sm" />
+    <button class="btn-play">
+      <i class="bi bi-play-fill"></i>
+    </button>
+  </div>
+
+  <h4 class="fw-semibold mt-3">{{ title }}</h4>
+  <p class="text-secondary mb-0">{{ genres }}</p>
 </div>

@@ -1,0 +1,42 @@
+footer {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #e0e1dd;
+  text-align: center;
+  border-top: 1px solid #415a77;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #a9c5d3;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #e0e1dd;
+}
+
+footer .social-icons {
+  margin-top: 6px; 
+}
+
+footer .social-icons i {
+  font-size: 18px;
+  margin: 0 8px;
+  color: #a9c5d3;
+  transition: color 0.3s ease, transform 0.2s;
+  cursor: pointer;
+}
+
+footer .social-icons i:hover {
+  color: #e0e1dd;
+  transform: scale(1.1);
+}
+
+footer small {
+  display: block;
+  margin-top: 6px; 
+  color: #8da9c4;
+  font-size: 0.8rem;
+}

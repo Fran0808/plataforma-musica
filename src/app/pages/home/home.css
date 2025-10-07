@@ -1,0 +1,40 @@
+main {
+  background-color: #e8edf2; 
+  padding: 0;
+}
+
+.baner {
+  background: linear-gradient(135deg, #1b263b, #0d1b2a);
+  min-height: 70vh;
+  padding: 60px 20px;
+  color: #e0e1dd;
+}
+
+.baner h3 {
+  color: #a9c5d3;
+}
+
+.baner button {
+  border: 1px solid #a9c5d3;
+  color: #e0e1dd;
+  background-color: #415a77;
+}
+
+.baner button:hover {
+  background-color: #415a77;
+  border-color: #415a77;
+}
+
+
+.portada-tendencia {
+  background-color: #f7f9fb; 
+  border-radius: 20px;
+  padding: 60px 20px;
+  margin-top: -40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.portada-tendencia h3 {
+  color: #1b263b;
+  margin-bottom: 40px;
+}

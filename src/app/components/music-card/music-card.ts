@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'music-card',
   standalone: true,
-  templateUrl: './music-card.html',
+  templateUrl:'./music-card.html',
   styleUrls: ['./music-card.css']
 })
 export class MusicCardComponent {

@@ -4,8 +4,13 @@ import { Component } from '@angular/core';
   selector: 'app-playlist',
   imports: [],
   templateUrl: './playlist.html',
-  styleUrl: './playlist.css'
+  styleUrl: './playlist.css',
 })
 export class Playlist {
+  playlistSongs = [
+
+];
 
 }
+
+

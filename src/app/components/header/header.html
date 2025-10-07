@@ -1,12 +1,32 @@
-<header>
-    <!--Rutas que se definen en app.routes-->
-    <!--routerLink para evitar recargar la pagina-->
-    <nav>
-        <!--SounNode viene a ser como el logo-->
-        <a routerLink="/">SoundNode</a>
-        <a routerLink="/">Inicio</a>
-        <a routerLink="/buscar">Buscar</a>
-        <a routerLink="/playlist">Playlist</a>        
+<nav class="navbar navbar-expand-lg navbar-dark py-3" style="background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4" href="#">
+      🎧 SoundNode
+    </a>
 
-    </nav>
-</header>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMusic" aria-controls="navbarMusic" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Enlaces -->
+    <div class="collapse navbar-collapse" id="navbarMusic">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Artistas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Playlists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Novedades</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-light ms-3" href="#">Iniciar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
