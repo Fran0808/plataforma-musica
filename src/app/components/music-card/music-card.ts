@@ -9,10 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 export class MusicCardComponent {
   //Los inputs son para recibir datos del componente padre
-
   @Input() results: any[] = [];
   @Input() loading: boolean = false;
   @Input() error: string = '';
   @Input() genres!: string;
   @Input() image!: string;
+  @Input() buscado: boolean = false;
 }

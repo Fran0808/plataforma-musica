@@ -24,7 +24,9 @@ export class Search {
 
   constructor(private music: Music) {}
   //Funcion para buscar musica
+  //Se crea la variable buscado para saber si se ha buscado algo y mostrar el componente de busqueda
   
+  buscado: Boolean = false;
   buscar() {
     if (!this.query.trim()) {
       this.error = 'Escribe algo';
@@ -33,6 +35,7 @@ export class Search {
     this.loading = true;
     this.error = '';
     this.results = [];
+    this.buscado = true;
 
     this.music.searchTracks(this.query).subscribe({
       next: (data: any) => {

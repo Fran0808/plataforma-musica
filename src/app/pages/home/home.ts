@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MusicCardComponent } from '../../components/music-card/music-card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,MusicCardComponent],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })

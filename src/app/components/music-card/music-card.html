@@ -1,20 +1,29 @@
 @if (loading) {
-  <div>Cargando...</div>
+  <div class="alert alert-info text-center my-3">Cargando...</div>
 }
 
 @if (error) {
-  <div>{{ error }}</div>
+  <div class="alert alert-danger text-center my-3">{{ error }}</div>
 }
 
-<div id="results">
+<div id="results" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
   @for (track of results; track track.id) {
-    <div class="song">
-      <img [src]="track.album.cover" alt="Portada" style="height:80px;vertical-align:middle;margin-right:12px;">
-      <strong>{{ track.title }}</strong> - {{ track.artist.name }}
-      <audio controls [src]="track.preview"></audio>
+    <div class="col">
+      <div class="card h-100 shadow-sm p-2">
+        <img [src]="track.album.cover" class="card-img-top img-fluid" alt="Portada del álbum">
+        <div class="card-body text-center p-2">
+          <h6 class="card-title mb-1">{{ track.title }}</h6>
+          <p class="card-text text-muted small mb-2">{{ track.artist.name }}</p>
+          <audio controls [src]="track.preview" class="w-100 mb-2"></audio>
+          <button class="btn btn-sm btn-primary">Fav</button>
+        </div>
+      </div>
     </div>
   }
   @empty {
-    <div>No se encontraron resultados.</div>
+  @if (buscado) {
+    <div class="alert alert-warning text-center">No se encontraron resultados.</div>
   }
+  }
+
 </div>
