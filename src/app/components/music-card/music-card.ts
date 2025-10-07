@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./music-card.css']
 })
 export class MusicCardComponent {
-  @Input() title!: string;
-  @Input() genres!: string;
-  @Input() image!: string;
+  //Los inputs son para recibir datos del componente padre
+  @Input() resultados: any[] = [];
+  @Input() cargando: boolean = false;
+  @Input() error: string = '';
+  @Input() buscado: boolean = false;
 }
