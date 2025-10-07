@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './playlist.css',
 })
 export class Playlist {
-  playlistSongs = [
-
-];
 
 }
 
