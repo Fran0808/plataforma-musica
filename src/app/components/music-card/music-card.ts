@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Favoritos } from '../../services/favoritos';
 
 @Component({
   selector: 'music-card',
   standalone: true,
-  templateUrl:'./music-card.html',
-  styleUrls: ['./music-card.css']
+  imports: [CommonModule],
+  templateUrl: './music-card.html',
+  styleUrls: ['./music-card.css'],
 })
 export class MusicCardComponent {
   //Los inputs son para recibir datos del componente padre
@@ -13,4 +15,16 @@ export class MusicCardComponent {
   @Input() cargando: boolean = false;
   @Input() error: string = '';
   @Input() buscado: boolean = false;
+
+  @Input() mode: 'search' | 'playlist' = 'search';
+  
+  constructor(private favoritos: Favoritos) {}
+
+  addToFavorites(song: any) {
+    this.favoritos.addFavorite(song);
+  }
+
+  removeFromFavorites(song: any) {
+    this.favoritos.removeFavorite(song);
+  }
 }

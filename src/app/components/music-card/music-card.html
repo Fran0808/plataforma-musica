@@ -1,29 +1,28 @@
 @if (cargando) {
-  <div class="alert alert-info text-center my-3">Cargando...</div>
-}
-
-@if (error) {
-  <div class="alert alert-danger text-center my-3">{{ error }}</div>
+<div class="alert alert-info text-center my-3">Cargando...</div>
+} @if (error) {
+<div class="alert alert-danger text-center my-3">{{ error }}</div>
 }
 
 <div id="results" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
   @for (track of resultados; track track.id) {
-    <div class="col">
-      <div class="card h-100 shadow-sm p-2">
-        <img [src]="track.album.cover" class="card-img-top img-fluid" alt="Portada del álbum">
-        <div class="card-body text-center p-2">
-          <h6 class="card-title mb-1">{{ track.title }}</h6>
-          <p class="card-text text-muted small mb-2">{{ track.artist.name }}</p>
-          <audio controls [src]="track.preview" class="w-100 mb-2"></audio>
-          <button class="btn btn-sm btn-primary">Fav</button>
-        </div>
+  <div class="col">
+    <div class="card h-100 shadow-sm p-2">
+      <img [src]="track.album.cover" class="card-img-top img-fluid" alt="Portada del álbum" />
+      <div class="card-body text-center p-2">
+        <h6 class="card-title mb-1">{{ track.title }}</h6>
+        <p class="card-text text-muted small mb-2">{{ track.artist.name }}</p>
+        <audio controls [src]="track.preview" class="w-100 mb-2"></audio>
+        @if (mode === 'search') {
+        <button class="btn btn-sm btn-primary" (click)="addToFavorites(track)">Fav</button>
+        } @else {
+        <button class="btn btn-sm btn-danger" (click)="removeFromFavorites(track)">Quitar
+        </button>
+        }
       </div>
     </div>
-  }
-  @empty {
-  @if (buscado) {
-    <div class="alert alert-warning text-center">No se encontraron resultados.</div>
-  }
-  }
-
+  </div>
+  } @empty { @if (buscado) {
+  <div class="alert alert-warning text-center">No se encontraron resultados.</div>
+  } }
 </div>

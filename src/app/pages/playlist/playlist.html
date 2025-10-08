@@ -1,1 +1,11 @@
+<div class="container">
+  <h2>Mi Playlist</h2>
 
+  @if (favorites.length === 0) {
+    <div class="alert alert-warning text-center">
+      No tienes canciones favoritas aún.
+    </div>
+  } @else {
+    <music-card [resultados]="favorites"  mode="playlist"/>
+  }
+</div>
