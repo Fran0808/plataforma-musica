@@ -8,7 +8,7 @@
   @for (track of resultados; track track.id) {
   <div class="col">
     <div class="card h-100 shadow-sm p-2">
-      <img [src]="track.album.cover" class="card-img-top img-fluid" alt="Portada del álbum" />
+      <img [src]="track.album.cover_xl" class="card-img-top img-fluid" alt="Portada del álbum" />
       <div class="card-body text-center p-2">
         <h6 class="card-title mb-1">{{ track.title }}</h6>
         <p class="card-text text-muted small mb-2">{{ track.artist.name }}</p>

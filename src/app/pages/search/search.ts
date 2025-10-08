@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Music } from '../../services/music';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { MusicCardComponent } from '../../components/music-card/music-card';
 
 
@@ -9,7 +8,7 @@ import { MusicCardComponent } from '../../components/music-card/music-card';
   selector: 'app-search',
   //Importando FormsModule porque es standalone. 
   //CommonModule se usa para utilizar las nuevas funciones de angular como @if o @For en html
-  imports: [FormsModule, CommonModule, MusicCardComponent], 
+  imports: [FormsModule, MusicCardComponent], 
   templateUrl: './search.html',  
   styleUrl: './search.css',
   standalone: true
