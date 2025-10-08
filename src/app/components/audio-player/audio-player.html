@@ -1,0 +1,50 @@
+<div class="audio-player bg-dark text-white d-flex align-items-center p-2">
+  <!-- Portada -->
+  <div class="me-3">
+    <img [src]="song?.album?.cover" alt="cover" class="rounded" style="width:60px; height:60px; object-fit:cover;">
+  </div>
+
+  <!-- Info canción -->
+  <div class="flex-grow-1">
+    <div class="fw-bold">{{ song?.title || 'Sin canción' }}</div>
+    <div class="text-muted small">{{ song?.artist?.name }}</div>
+
+    <!-- Barra de progreso -->
+    <div class="d-flex align-items-center mt-1">
+      <small class="me-2">{{ formatTime(currentTime) }}</small>
+      <input type="range" class="form-range flex-grow-1"
+             [max]="duration" [value]="currentTime"
+             (input)="seek($event)">
+      <small class="ms-2">{{ formatTime(duration) }}</small>
+    </div>
+  </div>
+
+  <!-- Botones de siguiente, atras, repetir y modo aleatorio -->
+  <div class="ms-3 d-flex align-items-center">
+    <button class="btn btn-light btn-sm rounded-circle me-2" (click)="prevSong()">
+      <i class="bi bi-skip-backward-fill"></i>
+    </button>
+
+    <button class="btn btn-light btn-sm rounded-circle me-2" (click)="playPause()">
+      <i class="bi" [ngClass]="isPlaying ? 'bi-pause-fill' : 'bi-play-fill'"></i>
+    </button>
+
+    <button class="btn btn-light btn-sm rounded-circle me-2" (click)="nextSong()">
+      <i class="bi bi-skip-forward-fill"></i>
+    </button>
+
+    <!-- Botón Shuffle -->
+    <button class="btn btn-outline-light btn-sm rounded-circle me-2" 
+            [class.active]="player.isShuffle" 
+            (click)="toggleShuffle()">
+      <i class="bi bi-shuffle"></i>
+    </button>
+
+    <!-- Botón Loop -->
+    <button class="btn btn-outline-light btn-sm rounded-circle" 
+            [class.active]="player.isLoop" 
+            (click)="toggleLoop()">
+      <i class="bi bi-arrow-repeat"></i>
+    </button>
+
+</div>
