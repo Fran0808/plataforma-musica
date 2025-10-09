@@ -27,6 +27,7 @@ export class Search {
   //Se crea la variable buscado para saber si se ha buscado algo y mostrar el componente de busqueda
   
   buscado: Boolean = false;
+  
   buscar() {
     if (!this.query.trim()) {
       this.error = 'Escribe algo';
